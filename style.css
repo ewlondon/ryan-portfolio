@@ -220,7 +220,7 @@ label {
   margin-bottom: 50px;
 }
 
-.container p {
+.container > p {
   color: var(--grey-color);
   text-align: center;
   text-wrap: balance;
