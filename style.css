@@ -243,6 +243,7 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .skill span {
   text-align: center;
@@ -316,6 +317,13 @@ label {
   border-radius: 10px;
   background-color: var(--dark-grey-color);
   padding: 1rem;
+}
+.projects a{
+  color: white;
+
+}
+.projects a:hover{
+  color: var(--accent-color);
 }
 
 .footer {

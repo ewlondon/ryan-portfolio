@@ -1,5 +1,8 @@
 const title = document.querySelector(".hero .left span:nth-of-type(3)");
-console.log(title);
+const openLabel = document.querySelector(".open");
+const closeLabel = document.querySelector(".close");
+const navLinks = document.querySelector(".nav-links");
+
 var typewriter = new Typewriter(title, {
   loop: true,
   delay: 75,
@@ -27,7 +30,10 @@ let counter = setInterval(() => {
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-
+    if (navLinks.classList.contains("open")) {
+      navLinks.classList.add("closed");
+      navLinks.classList.remove("open");
+    }
     const targetId = this.getAttribute("href");
     const targetElement = document.querySelector(targetId);
 
@@ -45,9 +51,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
-const openLabel = document.querySelector(".open");
-const closeLabel = document.querySelector(".close");
-const navLinks = document.querySelector(".nav-links");
+
 openLabel.addEventListener("click", function () {
   console.log("clicked open");
   navLinks.classList.add("open");
