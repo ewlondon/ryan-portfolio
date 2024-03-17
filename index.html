@@ -11,27 +11,50 @@
 <body>
   <!--------------------------- Header -------------------------->
   <header class="header">
-    <div class="logo">Welcome.</div>
-    <ul class="nav-links closed">
-      <li><a href="#about">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#certs">Certifications</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <label class="close">
+    <nav>
+      <div class="logo">Welcome.</div>
+      <ul class="nav-links closed">
+        <li><a href="#about">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certs">Certifications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <label class="close">
+          <input type="checkbox" />
+          <div></div>
+          <div></div>
+          <div></div>
+        </label>
+      </ul>
+      <button class="contact">Contact</button>
+      <div class="contact-modal modal-closed">
+        <div class="contact-modal-dialog">
+          <p>
+            <a class="accent" target="_blank" href="mailto:ryan@ryanconklin.com">
+              <img src="./assets/email.svg" alt="">
+              <span>Email</span>
+            </a>
+          </p>
+          <p>
+            <a class="accent" target="_blank" href="https://www.linkedin.com/in/ryan-cloud-ai/">
+              <img src="./assets/linkedin.svg" alt="">
+              <span>LinkedIn</span></a>
+          </p>
+          <p>
+            <a class="accent" target="_blank" href="https://www.credly.com/users/ryan-conklin.549c1adb/badges">
+              <img src="./assets/credly.png" alt="">
+              <span>LinkedIn</span></a>
+          </p>
+          <p>Phone: Available Upon Request</p>
+        </div>
+      </div>
+      <label class="open">
         <input type="checkbox" />
         <div></div>
         <div></div>
         <div></div>
       </label>
-    </ul>
-    <button>Contact</button>
-    <label class="open">
-      <input type="checkbox" />
-      <div></div>
-      <div></div>
-      <div></div>
-    </label>
+    </nav>
   </header>
 
   <!--------------------------- Hero -------------------------->
@@ -46,13 +69,22 @@
     </div>
     <div class="right">
       <img src="./assets/avatar.png" alt="">
-      <div class="overlay"></div>
     </div>
+
+    <section id="video">
+      <video autoplay muted playsinline>
+        <source src="./assets/background.mp4" type="video/mp4">
+      </video>
+      <!-- <img src="./assets/background.gif" alt=""> -->
+      <div class="overlay"></div>
+    </section>
   </section>
   <!-- divider -->
   <section class="divider">
     <span>Visitor Count: Over 9000</span>
+
   </section>
+
   <!--------------------------- Skills -------------------------->
   <section id="skills" class="skills container">
     <h2>Skills</h2>
@@ -143,19 +175,31 @@
     <div class="project-list">
       <div class="project">
         <h2>Project</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est tempora, nemo alias unde nesciunt veniam consequuntur quidem doloremque voluptatem. Iusto ipsam voluptatum incidunt odit animi excepturi neque, rerum esse, saepe accusamus impedit expedita aut labore recusandae sequi sit deserunt maiores, est explicabo reprehenderit laboriosam veniam temporibus velit? Consequuntur, cum quia.</p>
+        <div>
+          <img src="./assets/s3-topology.gif" alt="">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem sit iure cum vitae neque est beatae itaque similique quod?</p>
+        </div>
       </div>
       <div class="project">
         <h2>Project</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est tempora, nemo alias unde nesciunt veniam consequuntur quidem doloremque voluptatem. Iusto ipsam voluptatum incidunt odit animi excepturi neque, rerum esse, saepe accusamus impedit expedita aut labore recusandae sequi sit deserunt maiores, est explicabo reprehenderit laboriosam veniam temporibus velit? Consequuntur, cum quia.</p>
+        <div>
+          <img src="./assets/s3-topology.gif" alt="">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem sit iure cum vitae neque est beatae itaque similique quod?</p>
+        </div>
       </div>
       <div class="project">
         <h2>Project</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est tempora, nemo alias unde nesciunt veniam consequuntur quidem doloremque voluptatem. Iusto ipsam voluptatum incidunt odit animi excepturi neque, rerum esse, saepe accusamus impedit expedita aut labore recusandae sequi sit deserunt maiores, est explicabo reprehenderit laboriosam veniam temporibus velit? Consequuntur, cum quia.</p>
+        <div>
+          <img src="./assets/s3-topology.gif" alt="">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem sit iure cum vitae neque est beatae itaque similique quod?</p>
+        </div>
       </div>
       <div class="project">
         <h2>Project</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est tempora, nemo alias unde nesciunt veniam consequuntur quidem doloremque voluptatem. Iusto ipsam voluptatum incidunt odit animi excepturi neque, rerum esse, saepe accusamus impedit expedita aut labore recusandae sequi sit deserunt maiores, est explicabo reprehenderit laboriosam veniam temporibus velit? Consequuntur, cum quia.</p>
+        <div>
+          <img src="./assets/s3-topology.gif" alt="">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem sit iure cum vitae neque est beatae itaque similique quod?</p>
+        </div>
       </div>
 
     </div>
@@ -164,6 +208,7 @@
   <section>
     <div class="footer container">
       <p>&copy; 2024 Ryan Conklin. All rights reserved.</p>
+      <!-- <a class="accent" href="https://www.vecteezy.com/free-videos/screen-display">Screen Display Stock Videos by Vecteezy</a> -->
   </section>
   <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
   <script src="index.js"></script>

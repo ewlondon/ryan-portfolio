@@ -2,7 +2,20 @@ const title = document.querySelector(".hero .left span:nth-of-type(3)");
 const openLabel = document.querySelector(".open");
 const closeLabel = document.querySelector(".close");
 const navLinks = document.querySelector(".nav-links");
+const modal = document.querySelector(".contact-modal");
+const contact = document.querySelector(".contact");
+modal.addEventListener("click", (e) => {
+  console.log(e.target);
+  if (e.target === modal) {
+    modal.classList.remove("modal-open");
+    modal.classList.add("modal-closed");
+  }
+});
 
+contact.addEventListener("click", () => {
+  modal.classList.remove("modal-closed");
+  modal.classList.add("modal-open");
+});
 var typewriter = new Typewriter(title, {
   loop: true,
   delay: 75,

@@ -26,6 +26,18 @@ html {
   box-sizing: border-box;
 }
 
+video {
+  width: 100%;
+  filter: hue-rotate(220deg);
+}
+#video {
+  z-index: -999;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 img {
   max-width: 100%;
   display: block;
@@ -43,8 +55,15 @@ body {
 }
 
 .header {
-  width: min(1400px, (100% - 2rem));
+  width: 100vw;
+  margin-inline: auto;
   z-index: 999;
+}
+#about {
+  position: relative;
+}
+nav {
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -83,13 +102,15 @@ label {
   display: flex;
   width: min(1400px, (100% - 2rem));
   padding: 0 2rem;
-  margin-top: 10rem;
+  margin-top: 6rem;
   margin-inline: auto;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 }
 .left {
+  background-color: var(--black-color);
+  padding: 1rem;
   width: 40%;
   text-align: justify;
   gap: 0.5rem;
@@ -135,6 +156,9 @@ label {
   display: inline;
   font-weight: bold;
   color: var(--accent-color);
+  &:hover {
+    color: var(--white-color);
+  }
 }
 .header button {
   background-color: var(--black-color);
@@ -162,18 +186,20 @@ label {
 .overlay {
   position: absolute;
   background-size: contain;
-  mix-blend-mode: multiply;
+  /* mix-blend-mode: multiply; */
   width: 100%;
   height: 100%;
   opacity: 1;
   top: 0;
   left: 0;
   cursor: pointer;
+  /* background: linear-gradient(black, white); */
+  z-index: 9999;
+  box-shadow: inset 0 0 130px 6px var(--black-color),
+    inset 0 0 10px 8px var(--black-color);
 }
 .right img {
   transition: 0.2s;
-/*   box-shadow: 0 0 0 0px rgb(0, 0, 0), 0 0 0 6px var(--accent-color),
-    0 0 0 8px var(--white-color); */
   height: 100%;
   aspect-ratio: 1/1;
   border-radius: 50%;
@@ -201,6 +227,7 @@ label {
   text-align: center;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: min(1400px, (100% - 2rem));
   height: auto;
   margin: 0 auto;
@@ -242,6 +269,9 @@ label {
 .skill-list {
   margin-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 .skill {
@@ -319,9 +349,22 @@ label {
   gap: 2rem;
 }
 .project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   border-radius: 10px;
   background-color: var(--dark-grey-color);
   padding: 1rem;
+}
+.project div{
+  display: grid;
+  place-items: center;
+}
+.project div p {
+  margin-top: 1rem;
+  text-wrap: balance;
+  text-align: center;
 }
 .projects a {
   color: white;
@@ -340,10 +383,83 @@ label {
   gap: 2rem;
 }
 
-@media screen and (max-width: 800px) {
+.contact-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.623);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-closed {
+  translate: 0 -100vh;
+}
+.modal-open {
+  translate: 0 0;
+}
+
+.contact-modal-dialog {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.486);
+  background-color: rgb(0, 0, 0);
+  padding: 2rem;
+  width: 50%;
+  height: 70%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+  font-size: 1.2rem;
+  & img {
+    height: 50px;
+  }
+  & p,
+  & p a {
+    text-align: center;
+    text-wrap: balance;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1010px) {
   .skill-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+  .right img {
+    width: 50%;
+    height: auto;
+  }
+  .cert {
+    width: 100px;
+  }
+  .cert span {
+    text-wrap: balance;
+    text-align: center;
+  }
+  .certs {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .contact-modal-dialog {
+    width: 80%;
+  }
+  .skill-list {
+    display: flex;
   }
   .skill {
     width: 100px;
@@ -359,8 +475,7 @@ label {
     justify-content: center;
   }
   .certs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
   }
   .cert {
     width: 100px;
@@ -387,7 +502,7 @@ label {
   }
 
   .nav-links.closed {
-    transform: translateX(100%);
+    transform: translateX(120%);
   }
 
   .header label:has(input:checked) .nav-links {
@@ -434,27 +549,5 @@ label {
     background-color: var(--white-color);
     margin: 2px;
     transition: all 0.3s ease;
-  }
-}
-@media screen and (max-width: 1010px) {
-  .skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-  }
-
-  .right img {
-    width: 50%;
-    height: auto;
-  }
-  .cert span {
-    text-wrap: balance;
-    text-align: center;
-  }
-  .certs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
   }
 }
