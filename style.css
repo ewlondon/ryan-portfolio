@@ -326,6 +326,9 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  .skill{
+    width: 100px;
+  }
   .hero {
     flex-direction: column;
   }
@@ -339,6 +342,9 @@ body {
   .certs {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+  .cert{
+    width: 100px;
   }
   .project-list {
     grid-template-columns: 1fr;
