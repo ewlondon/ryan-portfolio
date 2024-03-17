@@ -397,7 +397,7 @@ label {
   align-items: center;
 }
 .modal-closed {
-  translate: 0 -100vh;
+  translate: 0 -200vh;
 }
 .modal-open {
   translate: 0 0;
@@ -428,6 +428,13 @@ label {
     gap: 0.5rem;
     justify-content: center;
     align-items: center;
+  }
+}
+@media screen and (orientation: landscape) {
+  .contact-modal-dialog {
+    flex-direction: row;
+    width: 90%;
+
   }
 }
 @media screen and (max-width: 1010px) {
