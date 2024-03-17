@@ -26,7 +26,7 @@ html {
   box-sizing: border-box;
 }
 
-video {
+#video img {
   width: 100%;
   filter: hue-rotate(220deg);
 }
