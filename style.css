@@ -172,8 +172,8 @@ label {
 }
 .right img {
   transition: 0.2s;
-  box-shadow: 0 0 0 0px rgb(0, 0, 0), 0 0 0 6px var(--accent-color),
-    0 0 0 8px var(--white-color);
+/*   box-shadow: 0 0 0 0px rgb(0, 0, 0), 0 0 0 6px var(--accent-color),
+    0 0 0 8px var(--white-color); */
   height: 100%;
   aspect-ratio: 1/1;
   border-radius: 50%;
