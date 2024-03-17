@@ -1,0 +1,367 @@
+@font-face {
+  font-family: "Interphases";
+  src: url("./assets/TTInterphasesProBold_normal_normal.woff2");
+  font-family: "Interphases Mono";
+  src: url("./assets/TTInterphasesProMonoRegular_normal_normal_subset1.woff2");
+}
+:root {
+  --accent-color-low-opacity: rgba(193, 254, 12, 0.493);
+  --accent-color: #c2fe0c;
+  --white-color: #f6f6f6;
+  --grey-color: #bebebe;
+  --dark-grey-color: #494949;
+  --black-color: rgb(0, 0, 0);
+  --aws: rgb(236, 145, 45);
+  --azure: rgb(0, 122, 255);
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  color: var(--white-color);
+  font-family: "Interphases Mono", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--black-color);
+  height: 100vh;
+}
+
+.header {
+  width: min(1400px, (100% - 2rem));
+  z-index: 999;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  padding: 1rem 2rem;
+  height: 80px;
+  background-color: var(--black-color);
+  margin-bottom: 100px;
+  box-shadow: 0 10px 50px rgb(0, 0, 0, 1);
+}
+#skills,
+#about,
+#certs,
+#projects {
+  scroll-behavior: smooth;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.header ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+}
+.hero {
+  display: flex;
+  width: min(1400px, (100% - 2rem));
+  padding: 0 2rem;
+  margin-top: 10rem;
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.left {
+  width: 40%;
+  text-align: justify;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.left > span:nth-of-type(2) {
+  font-size: 1.6rem;
+}
+
+.left > span:nth-of-type(3) {
+  font-size: 1.6rem;
+  color: var(--accent-color);
+}
+.header ul li a {
+  color: var(--white-color);
+  text-decoration: none;
+  transition: 0.3s;
+  position: relative;
+}
+.header ul li a:hover {
+  color: var(--accent-color);
+}
+.header ul li a::after {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  translate: -50% 5px;
+  left: 50%;
+  height: 5px;
+  background-color: var(--accent-color);
+  width: 0px;
+  transition: 0.5s;
+}
+.header ul li a:hover::after {
+  width: 100%;
+}
+.accent {
+  display: inline;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+.header button {
+  background-color: var(--black-color);
+  border: 1px solid var(--accent-color);
+  width: 100px;
+  height: 40px;
+  color: var(--accent-color);
+  font-size: 1rem;
+  font-family: "Interphases Mono", sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--accent-color);
+    color: var(--black-color);
+  }
+}
+.right {
+  height: 340px;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 60%;
+}
+.overlay {
+  position: absolute;
+  background-size: contain;
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.right img {
+  transition: 0.2s;
+  box-shadow: 0 0 0 0px rgb(0, 0, 0), 0 0 0 6px var(--accent-color),
+    0 0 0 8px var(--white-color);
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.filter {
+  filter: invert();
+}
+
+.special {
+  text-decoration: underline;
+}
+
+.aws {
+  font-weight: bold;
+  color: var(--aws);
+}
+
+.azure {
+  font-weight: bold;
+  color: var(--azure);
+}
+
+.divider {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: min(1400px, (100% - 2rem));
+  height: auto;
+  margin: 0 auto;
+  margin-top: 50px;
+  color: var(--white-color);
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.container {
+  width: min(1400px, (100% - 2rem));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  margin-top: 50px;
+  gap: 0.5rem;
+  margin-bottom: 50px;
+}
+
+.container p {
+  color: var(--grey-color);
+}
+.skills img {
+  width: 50px;
+  height: 50px;
+  margin: 0.5rem;
+}
+.skill img:nth-of-type(1) {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.skill-list {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.skill span {
+  text-align: center;
+}
+
+.certs {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.cert {
+  text-align: center;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.cert span > a {
+  color: white;
+  text-decoration: none;
+}
+.cert span > a:hover {
+  color: var(--accent-color);
+}
+.cert span {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.cert span::after {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  translate: -50% 10px;
+  left: 50%;
+  height: 5px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    var(--accent-color),
+    rgba(0, 0, 0, 0.5)
+  );
+  width: 0px;
+  transition: width 0.5s;
+}
+.cert span:hover::after {
+  width: 100%;
+}
+.cert span .certs img {
+  width: 150px;
+}
+.cert:nth-of-type(7) img,
+.cert:nth-of-type(8) img {
+  border-radius: 50%;
+}
+
+.project-list {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.project {
+  border-radius: 10px;
+  background-color: var(--dark-grey-color);
+  padding: 1rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.footer ul {
+  display: flex;
+  gap: 2rem;
+}
+@media screen and (max-width: 800px) {
+  .skill-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero {
+    flex-direction: column;
+  }
+  .left {
+    width: 100%;
+  }
+  .right {
+    height: auto;
+    justify-content: center;
+  }
+  .certs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 1010px) {
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+  .right img {
+    width: 50%;
+    height: auto;
+  }
+  .cert span {
+    text-wrap: balance;
+    text-align: center;
+  }
+  .certs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
