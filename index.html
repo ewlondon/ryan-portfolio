@@ -12,14 +12,26 @@
   <!--------------------------- Header -------------------------->
   <header class="header">
     <div class="logo">Welcome.</div>
-    <ul>
+    <ul class="nav-links">
       <li><a href="#about">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#certs">Certifications</a></li>
       <li><a href="#projects">Projects</a></li>
+      <label onclick="closeNav()">
+        <input type="checkbox" />
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
     </ul>
     <button>Contact</button>
+    <label onclick="openNav()">
+      <input type="checkbox" />
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
   </header>
 
   <!--------------------------- Hero -------------------------->
@@ -175,7 +187,7 @@
     setInterval(() => {
       visitors++;
       visitorCount.innerText = `Visitor count: ${visitors}`;
-      if(visitors > 100000) visitors = 0
+      if (visitors > 100000) visitors = 0
     }, 100)
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -196,6 +208,14 @@
         }
       });
     });
+
+    function openNav() {
+      document.querySelector(".nav-links").style.transform = "translateX(0%)";
+    }
+
+    function closeNav() {
+      document.querySelector(".nav-links").style.transform = "translateX(100%)";
+    }
   </script>
 </body>
 
