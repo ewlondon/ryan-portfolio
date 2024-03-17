@@ -222,6 +222,8 @@ label {
 
 .container p {
   color: var(--grey-color);
+  text-align: center;
+  text-wrap: balance;
 }
 .skills img {
   width: 50px;
@@ -318,11 +320,10 @@ label {
   background-color: var(--dark-grey-color);
   padding: 1rem;
 }
-.projects a{
+.projects a {
   color: white;
-
 }
-.projects a:hover{
+.projects a:hover {
   color: var(--accent-color);
 }
 
