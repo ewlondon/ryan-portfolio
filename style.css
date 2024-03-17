@@ -407,8 +407,8 @@ label {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.486);
   background-color: rgb(0, 0, 0);
   padding: 2rem;
-  width: 50%;
-  height: 70%;
+  width: auto;
+  height: max-content;
   display: flex;
   justify-content: start;
   flex-direction: column;
@@ -433,7 +433,7 @@ label {
 @media screen and (orientation: landscape) {
   .contact-modal-dialog {
     flex-direction: row;
-    width: 90%;
+    width: auto;
   }
   .project{
     font-size: 0.8rem;
